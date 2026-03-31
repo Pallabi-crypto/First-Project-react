@@ -1,0 +1,232 @@
+* {
+  box-sizing: border-box;
+}
+
+/* GLOBAL STYLES */
+
+body,
+.app {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 96%;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 18px;
+  font-weight: bolder;
+  
+}
+.app {
+  display: flex;
+}
+.app-sidebar {
+  width: 15%;
+  height: 100vh;
+  border-right: 1px solid #ddd;
+}
+.app-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+}
+.app-sidebar-header h1 {
+  margin:0;
+  font-size: 15px;
+}
+.button {
+  background-color: #0f00ba; 
+  border: none; 
+  color: white; /* White text color */
+  padding: 5px 12px; /* Space around text */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underlines (if using <a>)*/ 
+  display: inline-block; /* Allows width/height adjustments */
+  font-size: 28px; /* Increase font size */
+  cursor: pointer; /* Change mouse cursor to a hand*/ 
+  border-radius: 50%; /* Rounded corners */
+  transition-duration: 0.4s; /* Smooth transition for hover effects*/
+  position: fixed;
+  bottom: 20px;
+  left: 10%;
+  
+}
+
+.button:hover {
+  background-color: #0f00ba; /* Change background on hover */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Add subtle shadow on hover */
+}
+.pop-up{
+  position: fixed;
+  inset: 0;
+  opacity: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+}
+.pop-up-margin {
+  background: white;
+  padding: 13px;
+  border-radius: 5px;
+  width: 320px;
+  gap: 5px;
+  background-color: #c8a8bfd4;
+  /* text-align: left; */
+  font-size: 10px;
+  color:black;
+}
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.label {
+  min-width: 80px;
+  font-weight: 500;
+  font-size: 14px;
+  gap: 10px;
+}
+
+.form-row input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+}
+.btn-row{
+  display: flex;
+  justify-content: flex-end;
+}
+.create-btn {
+  width: 22%;
+  margin-top: 20px;
+  padding: 6px;
+  background: rgb(82, 5, 207);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.color-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.color {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.color.active {
+  outline: 2px solid black;
+}
+.app-sidebar-note{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.dot{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group-name{
+  font-size: 14px;
+  font-weight: 500;
+}
+.app-main {
+  width: 85%;   /* remaining space after sidebar */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.app-main-empty{
+  width: 80%;
+  height: 100vh;
+  display: inline;
+  justify-content: space-between;
+  /* line-height: 12vh; */
+  padding: 228px; 
+  text-align: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: #a0b9d0;
+}
+h4{
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.app-main-header{
+  height: 7vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 10px;
+  background-color: #0f00ba;
+  color: white;
+}
+.app-main-note{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background-color 0.2s ease;
+}
+.note-list{
+  height: 490px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  padding-left: 10px; 
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #a0b9d0;
+
+}
+.note{
+  background: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  display: block;
+}
+.app-main-note-preview {
+  position: relative;
+  width: 100%;
+}
+textarea{
+  min-height: 125px;
+  width: 100%;
+  resize: none;
+  padding: 5px 25px 5px 5px;
+  border-radius: 6px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #0f00ba;
+  padding: 10px;
+  font-size: 15px;
+}
+.send-btn{
+  position: absolute;
+  bottom: 12.5px;
+  right: 9px;
+  color: #0f00ba;
+}
+.send-btn:disabled{
+  background-color: white;
+  color: #5e5b5b;
+  cursor: not-allowed;
+}
