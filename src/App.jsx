@@ -19,7 +19,7 @@ function App() {
     localStorage.setItem("groups", JSON.stringify(groups));
   }, [groups]);
 
-  // ✅ Fix old data
+ 
   useEffect(() => {
     setGroups(prev =>
       prev.map(group => ({
@@ -55,8 +55,7 @@ function App() {
       />
 
       <Main
-        activeGroup={activeGroup}
-        activeGroupId={activeGroupId}   // ✅ ADD THIS
+        activeGroupId={activeGroupId}   
         setGroups={setGroups}
         groups={groups}
       />
